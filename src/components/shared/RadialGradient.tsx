@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { ColorValue, OpaqueColorValue, StyleSheet, ViewStyle } from 'react-native';
+import { ColorValue, OpaqueColorValue, StyleSheet, View, ViewStyle } from 'react-native';
 import Svg, {
   Defs,
   RadialGradient as DefaultRadialGradient,
@@ -7,8 +7,6 @@ import Svg, {
   Rect,
   NumberProp,
 } from 'react-native-svg';
-
-import { View } from './Themed';
 
 export interface RadialColor {
   color: ColorValue;
@@ -54,7 +52,7 @@ const getCenter = (position?: Position): RadialPositionEdges => {
   return { start: defaultValue, end: defaultValue };
 };
 
-export default function RadialGradient({
+export function RadialGradient({
   radius = '50%',
   children,
   colors,
@@ -107,7 +105,7 @@ export default function RadialGradient({
   }, [color]);
 
   return (
-    <View style={[style, styles.transparent]}>
+    <View style={style}>
       <Svg style={styles.container}>
         <Defs>
           <DefaultRadialGradient
@@ -133,5 +131,4 @@ const styles = StyleSheet.create({
     height: '100%',
     position: 'absolute',
   },
-  transparent: { backgroundColor: 'transparent' },
 });

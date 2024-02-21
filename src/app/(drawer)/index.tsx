@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import RadialGradient from '@/components/RadialGradient';
-import { ComfortaaText, QuantumText, HumaneText } from '@/components/StyledText';
+import { ComfortaaText, HumaneText, QuantumText, RadialGradient } from '@/components/shared';
 import Colors from '@/constants/Colors';
 
 export default function TabOneScreen() {
