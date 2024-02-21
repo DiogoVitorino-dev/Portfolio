@@ -1,16 +1,16 @@
 import { StyleSheet } from 'react-native';
 
+import RadialGradient from '@/components/RadialGradient';
 import { ComfortaaText, QuantumText, HumaneText } from '@/components/StyledText';
-import { View } from '@/components/Themed';
+import Colors from '@/constants/Colors';
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
+    <RadialGradient colors={[Colors.primary, Colors.background]} style={{ flex: 1 }}>
       <ComfortaaText style={styles.title}>Tab One</ComfortaaText>
       <QuantumText style={styles.title}>Tab One</QuantumText>
       <HumaneText style={styles.title}>Tab One</HumaneText>
-      <View style={styles.separator} />
-    </View>
+    </RadialGradient>
   );
 }
 
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: 'black',
   },
   separator: {
     marginVertical: 30,

@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "main": "expo-router/entry",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -30,6 +30,7 @@
     "react-native-reanimated": "~3.6.2",
     "react-native-safe-area-context": "4.8.2",
     "react-native-screens": "~3.29.0",
+    "react-native-svg": "14.1.0",
     "react-native-web": "~0.19.6"
   },
   "devDependencies": {
