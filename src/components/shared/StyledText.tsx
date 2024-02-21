@@ -1,21 +1,28 @@
-import { TextProps } from 'react-native';
+import styled from 'styled-components/native';
 
-import { Text } from './Themed';
+import Colors from '@/constants/Colors';
 
-interface StaticFontWeight {
-  fontWeight?: 'regular' | 'bold';
+type StaticWeight = 'normal' | 'bold';
+
+interface TextTags {
+  fontWeight?: StaticWeight;
+  secondary?: boolean;
 }
 
-export function ComfortaaText({ style, fontWeight, ...others }: TextProps & StaticFontWeight) {
-  const fontFamily = fontWeight === 'bold' ? 'ComfortaaBold' : 'ComfortaaRegular';
-  return <Text {...others} style={[style, { fontFamily }]} />;
-}
+export const Text = styled.Text<TextTags>`
+  color: ${(props) => (props.secondary ? Colors.textSecondary : Colors.text)};
+  font-size: 22px;
+  font-weight: ${(props) => (props.fontWeight === 'bold' ? 'bold' : 'normal')};
+`;
 
-export function HumaneText({ style, fontWeight, ...others }: TextProps & StaticFontWeight) {
-  const fontFamily = fontWeight === 'bold' ? 'HumaneBold' : 'HumaneRegular';
-  return <Text {...others} style={[style, { fontFamily }]} />;
-}
+export const ComfortaaText = styled(Text)`
+  font-family: ${(props) => (props.fontWeight === 'bold' ? 'ComfortaaBold' : 'ComfortaaRegular')};
+`;
 
-export function QuantumText({ style, ...others }: TextProps) {
-  return <Text {...others} style={[style, { fontFamily: 'Quantum' }]} />;
-}
+export const HumaneText = styled(Text)`
+  font-family: ${(props) => (props.fontWeight === 'bold' ? 'HumaneBold' : 'HumaneRegular')};
+`;
+
+export const QuantumText = styled(Text)`
+  font-family: Quantum;
+`;

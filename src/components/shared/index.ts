@@ -1,3 +1,3 @@
 export * from './RadialGradient';
-export * from './Themed';
+export * from './StyledView';
 export * from './StyledText';
