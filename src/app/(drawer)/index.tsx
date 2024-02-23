@@ -1,32 +1,27 @@
-import { StyleSheet } from 'react-native';
+import { useFocusEffect, useNavigation } from 'expo-router';
+import { Platform, ScrollView } from 'react-native';
 
-import { ComfortaaText, HumaneText, QuantumText, RadialGradient } from '@/components/shared';
+import { HEADER_HEIGHT } from '@/components/customHeader/styles';
+import Presents from '@/components/presents';
+import { View } from '@/components/shared';
 import Colors from '@/constants/Colors';
+import useCustomDrawerHeader from '@/hooks/customHeader/useCustomDrawerHeader';
 
-export default function TabOneScreen() {
+export default function Index() {
+  const nav = useNavigation();
+  const { HeaderOptions, onScroll } = useCustomDrawerHeader({ position: 'bottom' });
+
+  useFocusEffect(() => {
+    nav.setOptions({ ...HeaderOptions });
+  });
   return (
-    <RadialGradient colors={[Colors.primary, Colors.background]} style={{ flex: 1 }}>
-      <ComfortaaText style={styles.title}>Tab One</ComfortaaText>
-      <QuantumText style={styles.title}>Tab One</QuantumText>
-      <HumaneText style={styles.title}>Tab One</HumaneText>
-    </RadialGradient>
+    <ScrollView
+      style={{ backgroundColor: Colors.background, marginTop: -HEADER_HEIGHT }}
+      showsVerticalScrollIndicator={Platform.OS === 'web'}
+      onScroll={onScroll}
+      scrollEventThrottle={1}>
+      <Presents />
+      <View style={{ height: 2000 }} />
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'black',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
