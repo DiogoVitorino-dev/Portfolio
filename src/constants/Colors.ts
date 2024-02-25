@@ -18,5 +18,6 @@ export default {
   primaryComplement: '#ffb84d',
   compose: '#4dffed',
   composeComplement: '#ffdc4d',
+  shadow: '#00000010',
   cataClima,
 };

@@ -19,7 +19,6 @@ export default function Presents() {
       style={{ height }}
       colors={[{ color: Colors.backgroundBlueLight }, Colors.background]}
       position={{ start: { x: '40%', y: '50%' }, end: { x: '40%', y: '50%' } }}>
-        
       <PresentsContainer>
         <PresentsMainTextBegin>fol</PresentsMainTextBegin>
         <PresentsMainTextEnd>io</PresentsMainTextEnd>

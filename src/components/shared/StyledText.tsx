@@ -9,9 +9,12 @@ interface TextTags {
   secondary?: boolean;
 }
 
-export const Text = styled.Text<TextTags>`
+export const Text = styled.Text.attrs<TextTags>(() => ({
+  allowFontScaling: true,
+  maxFontSizeMultiplier: 1.2,
+}))`
   color: ${(props) => (props.secondary ? Colors.textSecondary : Colors.text)};
-  font-size: 22px;
+  font-size: 26px;
   font-weight: ${(props) => (props.fontWeight === 'bold' ? 'bold' : 'normal')};
 `;
 
