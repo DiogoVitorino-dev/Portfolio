@@ -9,8 +9,6 @@ const smartphoneSrc = require('@/assets/images/cataclimaSmartphone.png');
 const webSrc = require('@/assets/images/cataclimaWeb.png');
 
 export const Container = styled(Animated.View)`
-  flex: 2;
-  flex-grow: 2;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
@@ -18,8 +16,9 @@ export const Container = styled(Animated.View)`
 `;
 
 export const Open = styled(Pressable)`
-  flex: 1;
+  flex: 1.5;
   z-index: -100;
+  flex-basis: 270px;
 `;
 
 export const ImageWeb = styled(Animated.Image).attrs(() => ({
@@ -40,6 +39,4 @@ export const Filter = styled(View)`
   background-color: ${Colors.cataClima.cloud[50]};
   opacity: 0.2;
   position: absolute;
-  width: 100%;
-  height: 100%;
 `;

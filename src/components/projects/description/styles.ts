@@ -7,9 +7,9 @@ import Colors from '@/constants/Colors';
 
 export const Container = styled(View)`
   background-color: ${Colors.backdrop};
-  flex: 1;
-  max-width: 350px;
   flex-direction: column;
+  flex: 1;
+  flex-basis: 270px;
   align-items: center;
   justify-content: space-around;
   padding: 8px;
@@ -17,8 +17,13 @@ export const Container = styled(View)`
 
 export const ContainerShadow = styled(Shadow).attrs(() => ({
   distance: 20,
+  containerStyle: {
+    flex: 1,
+    flexBasis: 270,
+  },
   sides: { end: true, bottom: false, start: false, top: false },
 }))`
+  flex-basis: 270px;
   flex: 1;
 `;
 
@@ -28,15 +33,19 @@ export const DescriptionButtonShadow = styled(Shadow).attrs(() => ({
   startColor: Colors.shadow,
 }))``;
 
-export const TitleText = styled(ComfortaaText)`
-  font-size: 42px;
+export const TitleText = styled(ComfortaaText).attrs(() => ({
+  fontSize: 42,
+  numberOfLines: 1,
+  adjustsFontSizeToFit: true,
+}))`
   font-weight: bold;
   margin: 8px 0;
   text-transform: capitalize;
 `;
 
-export const DescriptionText = styled(ComfortaaText)`
-  font-size: 16px;
+export const DescriptionText = styled(ComfortaaText).attrs(() => ({
+  fontSize: 18,
+}))`
   padding: 0 6px;
 `;
 
@@ -55,29 +64,31 @@ export const Tag = styled(View)`
   background-color: ${Colors.primaryComplement};
 `;
 
-export const TagText = styled(ComfortaaText)`
-  font-size: 16px;
+export const TagText = styled(ComfortaaText).attrs(() => ({
+  fontSize: 12,
+}))`
   font-weight: bold;
   color: ${Colors.backdrop};
 `;
 
 export const Button = styled(Pressable)`
   padding: 12px 16px;
-  margin: 4px;
+  margin: 4px 8px;
   border-radius: 5px;
 `;
 
-export const ButtonText = styled(ComfortaaText)`
+export const ButtonText = styled(ComfortaaText).attrs(() => ({
+  fontSize: 16,
+}))`
   font-weight: bold;
-  font-size: 16px;
   color: ${Colors.backdrop};
   text-transform: capitalize;
 `;
 
 export const ContainerButton = styled(View)`
   background-color: transparent;
+  width: 270px;
   flex-direction: row;
-  width: 100%;
   align-items: center;
   justify-content: space-evenly;
 `;

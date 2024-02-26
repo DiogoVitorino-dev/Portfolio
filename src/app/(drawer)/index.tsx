@@ -1,6 +1,7 @@
 import { useFocusEffect, useNavigation } from 'expo-router';
 import { Platform, ScrollView } from 'react-native';
 
+import Contacts from '@/components/contact';
 import { HEADER_HEIGHT } from '@/components/customHeader/styles';
 import Presents from '@/components/presents';
 import Project from '@/components/projects';
@@ -29,8 +30,14 @@ export default function Index() {
         linkGithub={process.env.EXPO_PUBLIC_CATACLIMA_GITHUB}
         linkPreview={process.env.EXPO_PUBLIC_CATACLIMA_PREVIEW}
         tags={['Expo', 'React Native', 'Async storage', 'Axios', 'Redux', 'Figma']}>
-        <CataclimaPreview linkPreview={process.env.EXPO_PUBLIC_CATACLIMA_GITHUB} />
+        <CataclimaPreview linkPreview={process.env.EXPO_PUBLIC_CATACLIMA_PREVIEW} />
       </Project>
+      <Contacts
+        email={process.env.EXPO_PUBLIC_EMAIL}
+        linkGithub={process.env.EXPO_PUBLIC_GITHUB}
+        linkLinkedIn={process.env.EXPO_PUBLIC_LINKEDIN}
+        number={process.env.EXPO_PUBLIC_NUMBER}
+      />
       <View style={{ height: 2000 }} />
     </ScrollView>
   );

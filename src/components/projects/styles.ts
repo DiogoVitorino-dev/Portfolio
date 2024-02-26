@@ -13,11 +13,10 @@ export const Container = styled(View)`
   background-color: ${Colors.backdrop};
   border-radius: 20px;
   overflow: hidden;
-  justify-content: stretch;
-  align-items: stretch;
   flex-direction: row;
   width: 90%;
   max-width: 1280px;
   max-height: 720px;
+  min-width: 540px;
   height: 80%;
 `;

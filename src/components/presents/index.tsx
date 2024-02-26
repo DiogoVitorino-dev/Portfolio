@@ -16,9 +16,8 @@ export default function Presents() {
   const { height } = useWindowDimensions();
   return (
     <PresentsBackground
-      style={{ height }}
       colors={[{ color: Colors.backgroundBlueLight }, Colors.background]}
-      position={{ start: { x: '40%', y: '50%' }, end: { x: '40%', y: '50%' } }}>
+      style={{ height }}>
       <PresentsContainer>
         <PresentsMainTextBegin>fol</PresentsMainTextBegin>
         <PresentsMainTextEnd>io</PresentsMainTextEnd>

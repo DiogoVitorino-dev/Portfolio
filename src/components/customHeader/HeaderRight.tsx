@@ -22,7 +22,7 @@ export default function HeaderRight({ windowWidth, navigation }: HeaderRightProp
     <HeaderNavContainer>
       {windowWidth <= Breakpoints.header ? (
         <HeaderPressable onPressOut={handleOnPressDrawer}>
-          {({ color }) => <Icon name="menu" size={32} color={color} />}
+          {({ color }) => <Icon name="bars" size={32} color={color} />}
         </HeaderPressable>
       ) : (
         <>

@@ -52,7 +52,7 @@ const getCenter = (position?: Position): RadialPositionEdges => {
   return { start: defaultValue, end: defaultValue };
 };
 
-export function RadialGradient({
+export default function RadialGradient({
   radius = '50%',
   children,
   colors,
@@ -74,7 +74,7 @@ export function RadialGradient({
     }
   }, [colors]);
 
-  const createStops = useCallback(() => {
+  const createStops = () => {
     const colorLength = color.length;
     return color.map((value, index) => {
       let { color, offset, opacity }: RadialColor = { color: 'transparent' };
@@ -102,7 +102,7 @@ export function RadialGradient({
 
       return <Stop offset={offset} stopColor={color} stopOpacity={opacity} key={`stop${index}`} />;
     });
-  }, [color]);
+  }
 
   return (
     <View style={style}>

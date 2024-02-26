@@ -1,20 +1,24 @@
+import { PixelRatio } from 'react-native';
 import styled from 'styled-components/native';
 
 import Colors from '@/constants/Colors';
 
 type StaticWeight = 'normal' | 'bold';
 
-interface TextTags {
+interface CustomTextProps {
   fontWeight?: StaticWeight;
   secondary?: boolean;
+  fontSize?: number;
 }
 
-export const Text = styled.Text.attrs<TextTags>(() => ({
+const scale = PixelRatio.get();
+
+export const Text = styled.Text.attrs<CustomTextProps>(() => ({
   allowFontScaling: true,
-  maxFontSizeMultiplier: 1.2,
+  adjustsFontSizeToFit: true,
 }))`
   color: ${(props) => (props.secondary ? Colors.textSecondary : Colors.text)};
-  font-size: 26px;
+  font-size: ${(props) => (props.fontSize ? props.fontSize * scale : 26 * scale)}px;
   font-weight: ${(props) => (props.fontWeight === 'bold' ? 'bold' : 'normal')};
 `;
 
