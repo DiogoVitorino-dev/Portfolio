@@ -4,6 +4,7 @@ import ContactItem from './contactItem';
 import { Container, Root, Title } from './styles';
 
 import Colors from '@/constants/Colors';
+import { StringsUtils } from '@/utils/stringsUtils';
 
 interface ContactsProps {
   linkGithub?: string;
@@ -13,6 +14,7 @@ interface ContactsProps {
 }
 
 export default function Contacts({ email, linkGithub, linkLinkedIn, number }: ContactsProps) {
+  const { removeWhiteSpaces } = StringsUtils;
   return (
     <Root colors={[{ color: Colors.primaryComplement }, Colors.primary]}>
       <Title>Contatos</Title>
@@ -20,7 +22,7 @@ export default function Contacts({ email, linkGithub, linkLinkedIn, number }: Co
         <ContactItem
           icon="envelope"
           text={email}
-          link={email ? `mailto:${email.trim()}` : email}
+          link={email ? `mailto:${removeWhiteSpaces(email)}` : email}
           color="primary"
         />
         <ContactItem icon="github" text="Github" link={linkGithub} color="primaryComplement" />
@@ -28,7 +30,7 @@ export default function Contacts({ email, linkGithub, linkLinkedIn, number }: Co
         <ContactItem
           icon="whatsapp"
           text={number}
-          link={number ? `https://wa.me/${number.trim()}` : number}
+          link={number ? `https://wa.me/${removeWhiteSpaces(number)}` : number}
           color="primaryComplement"
         />
       </Container>
