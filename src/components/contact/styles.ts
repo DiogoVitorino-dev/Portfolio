@@ -21,6 +21,6 @@ export const Root = styled(RadialGradient).attrs(() => ({
 export const Title = styled(QuantumText).attrs(() => ({
   fontSize: 42,
 }))`
-  margin-bottom: 18px;
+  margin: 84px 0;
   text-align: center;
 `;
