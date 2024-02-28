@@ -4,9 +4,7 @@ import { Platform, ScrollView } from 'react-native';
 import Contacts from '@/components/contact';
 import { HEADER_HEIGHT } from '@/components/customHeader/styles';
 import Presents from '@/components/presents';
-import Project from '@/components/projects';
-import CataclimaPreview from '@/components/projects/previews/cataclima';
-import { View } from '@/components/shared';
+import Projects from '@/components/projects';
 import Colors from '@/constants/Colors';
 import useCustomDrawerHeader from '@/hooks/customHeader/useCustomDrawerHeader';
 
@@ -24,21 +22,13 @@ export default function Index() {
       onScroll={onScroll}
       scrollEventThrottle={1}>
       <Presents />
-      <Project
-        name="Cataclima"
-        description="Aplicativo Mobile desenvolvido em React-native com Expo, que utiliza a sua localização para fornecer a previsão do tempo na sua cidade. ☔"
-        linkGithub={process.env.EXPO_PUBLIC_CATACLIMA_GITHUB}
-        linkPreview={process.env.EXPO_PUBLIC_CATACLIMA_PREVIEW}
-        tags={['Expo', 'React Native', 'Async storage', 'Axios', 'Redux', 'Figma']}>
-        <CataclimaPreview linkPreview={process.env.EXPO_PUBLIC_CATACLIMA_PREVIEW} />
-      </Project>
+      <Projects />
       <Contacts
         email={process.env.EXPO_PUBLIC_EMAIL}
         linkGithub={process.env.EXPO_PUBLIC_GITHUB}
         linkLinkedIn={process.env.EXPO_PUBLIC_LINKEDIN}
         number={process.env.EXPO_PUBLIC_NUMBER}
       />
-      <View style={{ height: 2000 }} />
     </ScrollView>
   );
 }

@@ -9,7 +9,7 @@ export const Root = styled(View)`
   align-items: center;
 `;
 
-export const Container = styled(View)`
+export const Project = styled(View)`
   background-color: ${Colors.backdrop};
   border-radius: 20px;
   overflow: hidden;
