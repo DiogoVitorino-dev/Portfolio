@@ -2,7 +2,7 @@
   "expo": {
     "name": "Portfolio",
     "slug": "Portfolio",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "orientation": "portrait",
     "icon": "./src/assets/images/icon.png",
     "scheme": "myapp",

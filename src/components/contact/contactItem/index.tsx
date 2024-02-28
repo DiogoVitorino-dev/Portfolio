@@ -40,6 +40,7 @@ export default function ContactItem({
     if (link) {
       Linking.openURL(link);
     }
+    scale.value = withTiming(0.95, { duration: 200, easing: Easing.out(Easing.exp) });
   };
   return (
     <Item startColor={Colors[color] + '07'} endColor={Colors[color] + '00'}>
