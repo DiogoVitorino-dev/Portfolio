@@ -9,7 +9,6 @@ export const Container = styled(View)`
   background-color: ${Colors.backdrop};
   flex-direction: column;
   flex: 1;
-  flex-basis: 270px;
   align-items: center;
   justify-content: space-around;
   padding: 8px;
@@ -34,18 +33,20 @@ export const DescriptionButtonShadow = styled(Shadow).attrs(() => ({
 }))``;
 
 export const TitleText = styled(ComfortaaText).attrs(() => ({
-  fontSize: 42,
+  fontSize: 48,
   numberOfLines: 1,
   adjustsFontSizeToFit: true,
 }))`
   font-weight: bold;
   margin: 8px 0;
   text-transform: capitalize;
+  text-align: center;
 `;
 
 export const DescriptionText = styled(ComfortaaText).attrs(() => ({
-  fontSize: 18,
+  fontSize: 20,
 }))`
+  text-align: justify;
   padding: 0 6px;
 `;
 
@@ -65,7 +66,7 @@ export const Tag = styled(View)`
 `;
 
 export const TagText = styled(ComfortaaText).attrs(() => ({
-  fontSize: 12,
+  fontSize: 18,
 }))`
   font-weight: bold;
   color: ${Colors.backdrop};

@@ -1,14 +1,12 @@
 import React from 'react';
-import { useWindowDimensions } from 'react-native';
 
 import ProjectDescription from './description';
 import CataclimaPreview from './previews/cataclima';
 import { Project, Root, Title } from './styles';
 
 export default function Projects() {
-  const { height, width } = useWindowDimensions();
   return (
-    <Root style={{ height, width }}>
+    <Root>
       <Title>Projetos</Title>
       <Project>
         <ProjectDescription

@@ -6,25 +6,23 @@ import Colors from '@/constants/Colors';
 
 export const Root = styled(View)`
   justify-content: center;
-  align-items: center;
   flex-direction: column;
+  padding: 0 48px;
 `;
 
 export const Title = styled(QuantumText).attrs(() => ({
-  fontSize: 42,
+  fontSize: 58,
 }))`
-  margin: 84px 0;
+  margin: 48px 0;
   text-align: center;
 `;
 
 export const Project = styled(View)`
   background-color: ${Colors.backdrop};
   border-radius: 20px;
+  margin: 48px 0;
   overflow: hidden;
   flex-direction: row;
-  width: 90%;
   max-width: 1280px;
-  max-height: 720px;
   min-width: 540px;
-  height: 80%;
 `;
