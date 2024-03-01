@@ -29,6 +29,7 @@ export default function Projects() {
           description={`Projeto de uma Aplicação React-Native com Expo para consumir a API do Projeto API_REST-Estudos. \n\nO projeto possui Login e Cadastro para acessar a lista de Cidades e Pessoas onde é possível realizar as operações de criação, leitura, atualização e exclusão (CRUD) nos itens das listas`}
           linkGithub={process.env.EXPO_PUBLIC_APPREST_GITHUB}
           linkPreview={process.env.EXPO_PUBLIC_APPREST_PREVIEW}
+          linkExtra={{ title: 'API', link: process.env.EXPO_PUBLIC_APPREST_API }}
           tags={[
             'Expo',
             'React Native',

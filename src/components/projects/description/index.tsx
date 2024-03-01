@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linking, ViewStyle } from 'react-native';
+import { ColorValue, Linking, ViewStyle } from 'react-native';
 
 import DescriptionButton from './DescriptionButton';
 import {
@@ -16,6 +16,13 @@ import {
 
 import Colors from '@/constants/Colors';
 
+interface LinkExtra {
+  title: string;
+  link?: string;
+  color?: ColorValue;
+  titleColor?: ColorValue;
+}
+
 export interface ProjectDescriptionProps {
   name: string;
   description: string;
@@ -23,6 +30,7 @@ export interface ProjectDescriptionProps {
   tags?: string[];
   linkGithub?: string;
   linkPreview?: string;
+  linkExtra?: LinkExtra;
 }
 
 export default function ProjectDescription({
@@ -32,6 +40,7 @@ export default function ProjectDescription({
   tags,
   linkGithub,
   linkPreview,
+  linkExtra,
 }: ProjectDescriptionProps) {
   const createTags = () => {
     if (tags) {
@@ -75,6 +84,17 @@ export default function ProjectDescription({
                   title="Preview"
                   style={{ backgroundColor: Colors.compose }}
                   onPressOut={() => handleLink(linkPreview)}
+                />
+              </DescriptionButtonShadow>
+            ) : null}
+
+            {linkExtra?.link ? (
+              <DescriptionButtonShadow>
+                <DescriptionButton
+                  title={linkExtra.title}
+                  titleColor={linkExtra.titleColor || Colors.text}
+                  style={{ backgroundColor: linkExtra.color || Colors.background }}
+                  onPressOut={() => handleLink(linkExtra.link)}
                 />
               </DescriptionButtonShadow>
             ) : null}

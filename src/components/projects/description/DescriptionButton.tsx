@@ -1,5 +1,5 @@
 import React from 'react';
-import { GestureResponderEvent, MouseEvent } from 'react-native';
+import { ColorValue, GestureResponderEvent, MouseEvent } from 'react-native';
 import Animated, {
   Easing,
   useAnimatedStyle,
@@ -12,10 +12,12 @@ import { Button, ButtonText } from './styles';
 
 interface DescriptionButtonProps extends React.ComponentProps<typeof Button> {
   title: string;
+  titleColor?: ColorValue;
 }
 
 export default function DescriptionButton({
   title,
+  titleColor,
   style,
   onHoverIn,
   onHoverOut,
@@ -74,7 +76,7 @@ export default function DescriptionButton({
       onHoverOut={handleHoverOut}
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}>
-      <ButtonText>{title}</ButtonText>
+      <ButtonText style={{ color: titleColor }}>{title}</ButtonText>
     </AnimatedButton>
   );
 }
