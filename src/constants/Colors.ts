@@ -7,6 +7,13 @@ const cataClima = {
   sky: '#3687dd',
 };
 
+const appRest = {
+  gradient: {
+    start: '#1E2022',
+    end: '#292D30',
+  },
+};
+
 export default {
   text: '#eff1f0',
   textSecondary: '#828483',
@@ -20,4 +27,5 @@ export default {
   composeComplement: '#ffdc4d',
   shadow: '#00000010',
   cataClima,
+  appRest,
 };

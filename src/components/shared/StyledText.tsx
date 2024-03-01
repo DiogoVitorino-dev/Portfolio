@@ -1,11 +1,11 @@
-import { PixelRatio } from 'react-native';
+import { PixelRatio, TextProps } from 'react-native';
 import styled from 'styled-components/native';
 
 import Colors from '@/constants/Colors';
 
 type StaticWeight = 'normal' | 'bold';
 
-interface CustomTextProps {
+export interface CustomTextProps extends TextProps {
   fontWeight?: StaticWeight;
   secondary?: boolean;
   fontSize?: number;

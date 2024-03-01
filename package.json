@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "main": "expo-router/entry",
-  "version": "0.5.6",
+  "version": "0.6.0",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
