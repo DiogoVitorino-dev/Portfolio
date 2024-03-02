@@ -11,9 +11,10 @@ export interface ItemColor {
 
 export const Button = styled(Pressable).attrs<ItemColor>(() => ({}))`
   margin: 8px;
+  padding: 8px;
   border-radius: 20px;
-  width: 250px;
-  height: 230px;
+  min-width: 250px;
+  min-height: 230px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -39,6 +40,9 @@ export const Item = styled(Shadow).attrs(() => ({
 
 export const TextValue = styled(ComfortaaText).attrs(() => ({
   fontSize: 14,
+  adjustsFontSizeToFit: true,
+  numberOfLines: 2,
+  allowFontScaling: true,
 }))`
   color: ${Colors.background};
   margin: 10px 0;
