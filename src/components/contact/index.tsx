@@ -6,17 +6,23 @@ import { Container, Root, Title } from './styles';
 import Colors from '@/constants/Colors';
 import { StringsUtils } from '@/utils/stringsUtils';
 
-interface ContactsProps {
+interface ContactsProps extends Pick<React.ComponentProps<typeof Root>, 'onLayout'> {
   linkGithub?: string;
   linkLinkedIn?: string;
   email?: string;
   number?: string;
 }
 
-export default function Contacts({ email, linkGithub, linkLinkedIn, number }: ContactsProps) {
+export default function Contacts({
+  email,
+  linkGithub,
+  linkLinkedIn,
+  number,
+  onLayout,
+}: ContactsProps) {
   const { removeWhiteSpaces } = StringsUtils;
   return (
-    <Root colors={[{ color: Colors.primaryComplement }, Colors.primary]}>
+    <Root onLayout={onLayout} colors={[{ color: Colors.primaryComplement }, Colors.primary]}>
       <Title>Contatos</Title>
       <Container>
         <ContactItem

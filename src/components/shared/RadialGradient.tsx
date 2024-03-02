@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ColorValue, OpaqueColorValue, StyleSheet, View, ViewStyle } from 'react-native';
 import Svg, {
   Defs,
@@ -22,7 +22,7 @@ type RadialColorProp = (RadialColor | Exclude<ColorValue, OpaqueColorValue>)[];
 
 type Position = Partial<RadialPosition & RadialPositionEdges>;
 
-interface RadialGradientProps {
+interface RadialGradientProps extends Pick<React.ComponentProps<typeof View>, 'onLayout'> {
   /**
    * A list of colors that can receive `String` directly and/or `RadialColor`object for more options
    */
@@ -58,6 +58,7 @@ export default function RadialGradient({
   colors,
   position,
   style,
+  onLayout,
 }: RadialGradientProps) {
   const [{ start, end }] = useState<RadialPositionEdges>(getCenter(position));
   const [color, setColor] = useState<RadialColorProp>([]);
@@ -102,10 +103,10 @@ export default function RadialGradient({
 
       return <Stop offset={offset} stopColor={color} stopOpacity={opacity} key={`stop${index}`} />;
     });
-  }
+  };
 
   return (
-    <View style={style}>
+    <View onLayout={onLayout} style={style}>
       <Svg style={styles.container}>
         <Defs>
           <DefaultRadialGradient

@@ -6,6 +6,7 @@ import { HeaderNavContainer, HeaderNavText } from './styles';
 import { Icon } from '../shared';
 
 import { Breakpoints } from '@/constants/Breakpoints';
+import { SectionsNames } from '@/constants/SectionsNames';
 
 interface HeaderRightProps extends Pick<CustomHeaderProps, 'navigation' | 'windowWidth'> {}
 
@@ -14,8 +15,8 @@ export default function HeaderRight({ windowWidth, navigation }: HeaderRightProp
     navigation.toggleDrawer();
   };
 
-  const handleOnPressItem = (screen: string) => {
-    navigation.navigate(screen);
+  const handleOnPressItem = (section: SectionsNames) => {
+    navigation.navigate('index', { section });
   };
 
   return (
@@ -26,11 +27,11 @@ export default function HeaderRight({ windowWidth, navigation }: HeaderRightProp
         </HeaderPressable>
       ) : (
         <>
-          <HeaderPressable onPressOut={() => handleOnPressItem('index')}>
+          <HeaderPressable onPressOut={() => handleOnPressItem('projects')}>
             {({ color }) => <HeaderNavText style={{ color }}>Projetos</HeaderNavText>}
           </HeaderPressable>
 
-          <HeaderPressable onPressOut={() => handleOnPressItem('index')}>
+          <HeaderPressable onPressOut={() => handleOnPressItem('contacts')}>
             {({ color }) => <HeaderNavText style={{ color }}>Contatos</HeaderNavText>}
           </HeaderPressable>
         </>

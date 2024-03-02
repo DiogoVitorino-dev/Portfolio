@@ -12,10 +12,13 @@ import {
 
 import Colors from '@/constants/Colors';
 
-export default function Presents() {
+type PresentsProps = Pick<React.ComponentProps<typeof PresentsBackground>, 'onLayout'>;
+
+export default function Presents({ onLayout }: PresentsProps) {
   const { height } = useWindowDimensions();
   return (
     <PresentsBackground
+      onLayout={onLayout}
       colors={[{ color: Colors.backgroundBlueLight }, Colors.background]}
       style={{ height }}>
       <PresentsContainer>

@@ -7,10 +7,12 @@ import CataclimaPreview from './previews/cataclima';
 import { Project, Root, Title } from './styles';
 import { HEADER_HEIGHT } from '../customHeader/styles';
 
-export default function Projects() {
+type ProjectsProps = Pick<React.ComponentProps<typeof Root>, 'onLayout'>;
+
+export default function Projects({ onLayout }: ProjectsProps) {
   const { height } = useWindowDimensions();
   return (
-    <Root>
+    <Root onLayout={onLayout}>
       <Title>Projetos</Title>
       <Project style={{ maxHeight: height - HEADER_HEIGHT }}>
         <ProjectDescription
