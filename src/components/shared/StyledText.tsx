@@ -11,14 +11,14 @@ export interface CustomTextProps extends TextProps {
   fontSize?: number;
 }
 
-const scale = PixelRatio.get();
+const scale = PixelRatio.getFontScale();
 
 export const Text = styled.Text.attrs<CustomTextProps>(() => ({
   allowFontScaling: true,
   adjustsFontSizeToFit: true,
 }))`
   color: ${(props) => (props.secondary ? Colors.textSecondary : Colors.text)};
-  font-size: ${(props) => (props.fontSize ? props.fontSize * scale : 26 * scale)}px;
+  font-size: ${(props) => (props.fontSize ? props.fontSize / scale : 26 / scale)}px;
   font-weight: ${(props) => (props.fontWeight === 'bold' ? 'bold' : 'normal')};
 `;
 
