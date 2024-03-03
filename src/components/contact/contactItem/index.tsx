@@ -36,7 +36,7 @@ export default function ContactItem({
     scale.value = withTiming(1, { duration: 200, easing: Easing.out(Easing.exp) });
   };
 
-  const handlePressOut = () => {
+  const handlePress = () => {
     if (link) {
       Linking.openURL(link);
     }
@@ -47,7 +47,7 @@ export default function ContactItem({
       <AnimatedButton
         color={color}
         style={{ scale }}
-        onPressOut={handlePressOut}
+        onPress={handlePress}
         onHoverIn={handleHoverIn}
         onHoverOut={handleHoverOut}>
         <Icon name={icon} color={iconColor || Colors.background} size={iconSize || 30} />

@@ -16,7 +16,7 @@ const pressableColors = [Colors.text, Colors.compose];
 export default function HeaderPressable({
   onPressIn,
   children,
-  onPressOut,
+  onPress,
   onHoverIn,
   onHoverOut,
   ...others
@@ -48,8 +48,8 @@ export default function HeaderPressable({
 
   return (
     <Pressable
-      onPressOut={(event) => {
-        if (onPressOut) onPressOut(event);
+      onPress={(event) => {
+        if (onPress) onPress(event);
         handlerColors('none');
       }}
       onPressIn={(event) => {

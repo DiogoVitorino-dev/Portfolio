@@ -54,7 +54,7 @@ export default function CataclimaPreview({ linkPreview }: CataclimaPreviewProps)
     opacityContainer.value = withTiming(1, { duration: 500 });
   };
 
-  const handlePressOut = () => {
+  const handlePress = () => {
     if (linkPreview) {
       Linking.openURL(linkPreview);
     }
@@ -92,7 +92,7 @@ export default function CataclimaPreview({ linkPreview }: CataclimaPreviewProps)
   }, []);
 
   return (
-    <Open onPressOut={handlePressOut} onHoverIn={handleHoverIn} onHoverOut={handleHoverOut}>
+    <Open onPress={handlePress} onHoverIn={handleHoverIn} onHoverOut={handleHoverOut}>
       <Container style={{ opacity: opacityContainer }}>
         <Cloud1
           color={Colors.cataClima.cloud[100]}

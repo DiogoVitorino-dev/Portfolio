@@ -73,7 +73,7 @@ export default function ProjectDescription({
                 <DescriptionButton
                   title="Github"
                   style={{ backgroundColor: Colors.text }}
-                  onPressOut={() => handleLink(linkGithub)}
+                  onPress={() => handleLink(linkGithub)}
                 />
               </DescriptionButtonShadow>
             ) : null}
@@ -83,7 +83,7 @@ export default function ProjectDescription({
                 <DescriptionButton
                   title="Preview"
                   style={{ backgroundColor: Colors.compose }}
-                  onPressOut={() => handleLink(linkPreview)}
+                  onPress={() => handleLink(linkPreview)}
                 />
               </DescriptionButtonShadow>
             ) : null}
@@ -94,7 +94,7 @@ export default function ProjectDescription({
                   title={linkExtra.title}
                   titleColor={linkExtra.titleColor || Colors.text}
                   style={{ backgroundColor: linkExtra.color || Colors.background }}
-                  onPressOut={() => handleLink(linkExtra.link)}
+                  onPress={() => handleLink(linkExtra.link)}
                 />
               </DescriptionButtonShadow>
             ) : null}

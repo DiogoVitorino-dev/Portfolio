@@ -22,16 +22,16 @@ export default function HeaderRight({ windowWidth, navigation }: HeaderRightProp
   return (
     <HeaderNavContainer>
       {windowWidth <= Breakpoints.header ? (
-        <HeaderPressable onPressOut={handleOnPressDrawer}>
+        <HeaderPressable onPress={handleOnPressDrawer}>
           {({ color }) => <Icon name="bars" size={32} color={color} />}
         </HeaderPressable>
       ) : (
         <>
-          <HeaderPressable onPressOut={() => handleOnPressItem('projects')}>
+          <HeaderPressable onPress={() => handleOnPressItem('projects')}>
             {({ color }) => <HeaderNavText style={{ color }}>Projetos</HeaderNavText>}
           </HeaderPressable>
 
-          <HeaderPressable onPressOut={() => handleOnPressItem('contacts')}>
+          <HeaderPressable onPress={() => handleOnPressItem('contacts')}>
             {({ color }) => <HeaderNavText style={{ color }}>Contatos</HeaderNavText>}
           </HeaderPressable>
         </>

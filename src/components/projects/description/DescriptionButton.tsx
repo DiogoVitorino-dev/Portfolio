@@ -22,7 +22,7 @@ export default function DescriptionButton({
   onHoverIn,
   onHoverOut,
   onPressIn,
-  onPressOut,
+  onPress,
   ...props
 }: DescriptionButtonProps) {
   const AnimatedButton = Animated.createAnimatedComponent(Button);
@@ -62,10 +62,10 @@ export default function DescriptionButton({
     }
   };
 
-  const handlePressOut = (event: GestureResponderEvent) => {
+  const handlePress = (event: GestureResponderEvent) => {
     scale.value = withTiming(1, { duration: 200, easing: Easing.out(Easing.exp) });
-    if (onPressOut) {
-      onPressOut(event);
+    if (onPress) {
+      onPress(event);
     }
   };
   return (
@@ -75,7 +75,7 @@ export default function DescriptionButton({
       onHoverIn={handleHoverIn}
       onHoverOut={handleHoverOut}
       onPressIn={handlePressIn}
-      onPressOut={handlePressOut}>
+      onPress={handlePress}>
       <ButtonText style={{ color: titleColor }}>{title}</ButtonText>
     </AnimatedButton>
   );

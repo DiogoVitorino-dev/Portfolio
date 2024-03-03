@@ -14,7 +14,7 @@ export default function HeaderLeft({ navigation }: HeaderLeftProps) {
   };
   return (
     <HeaderNavContainer>
-      <HeaderPressable onPressOut={() => handleOnPressItem('presents')}>
+      <HeaderPressable onPress={() => handleOnPressItem('presents')}>
         {({ color }) => <HeaderText style={{ color }}>DV</HeaderText>}
       </HeaderPressable>
     </HeaderNavContainer>
