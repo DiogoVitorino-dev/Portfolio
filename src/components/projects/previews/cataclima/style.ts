@@ -11,13 +11,14 @@ const webSrc = require('@/assets/images/cataclimaWeb.png');
 export const Container = styled(Animated.View)`
   flex-direction: row;
   align-items: center;
+  max-height: 100%;
   justify-content: space-around;
   background-color: ${Colors.cataClima.sky};
 `;
 
 export const Open = styled(Pressable)`
-  flex: 2;
   z-index: -100;
+  min-width: 60%;
   flex-basis: 270px;
 `;
 
@@ -38,5 +39,7 @@ export const ImageSmartphone = styled(Animated.Image).attrs(() => ({
 export const Filter = styled(View)`
   background-color: ${Colors.cataClima.cloud[50]};
   opacity: 0.2;
+  width: 100%;
+  height: 100%;
   position: absolute;
 `;

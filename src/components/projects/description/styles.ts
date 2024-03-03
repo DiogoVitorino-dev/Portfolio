@@ -8,7 +8,7 @@ import Colors from '@/constants/Colors';
 export const Container = styled(View)`
   background-color: ${Colors.backdrop};
   flex-direction: column;
-  flex: 1;
+  height: 100%;
   align-items: center;
   justify-content: space-around;
   padding: 8px;
@@ -18,12 +18,10 @@ export const ContainerShadow = styled(Shadow).attrs(() => ({
   distance: 20,
   containerStyle: {
     flex: 1,
-    flexBasis: 270,
   },
-  sides: { end: true, bottom: false, start: false, top: false },
+  sides: { end: true, bottom: true, start: false, top: false },
 }))`
-  flex-basis: 270px;
-  flex: 1;
+  height: 100%;
 `;
 
 export const DescriptionButtonShadow = styled(Shadow).attrs(() => ({
@@ -38,16 +36,16 @@ export const TitleText = styled(ComfortaaText).attrs(() => ({
   adjustsFontSizeToFit: true,
 }))`
   font-weight: bold;
-  margin: 8px 0;
+  margin: 24px 0;
   text-transform: capitalize;
   text-align: center;
 `;
 
 export const DescriptionText = styled(ComfortaaText).attrs(() => ({
-  fontSize: 20,
+  fontSize: 18,
 }))`
   text-align: justify;
-  padding: 0 6px;
+  margin: 8px 0;
 `;
 
 export const ContainerTags = styled(View)`
@@ -66,7 +64,7 @@ export const Tag = styled(View)`
 `;
 
 export const TagText = styled(ComfortaaText).attrs(() => ({
-  fontSize: 18,
+  fontSize: 12,
 }))`
   font-weight: bold;
   color: ${Colors.backdrop};
@@ -88,7 +86,7 @@ export const ButtonText = styled(ComfortaaText).attrs(() => ({
 
 export const ContainerButton = styled(View)`
   background-color: transparent;
-  width: 270px;
+  margin: 8px 0;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;

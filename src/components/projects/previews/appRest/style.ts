@@ -17,8 +17,8 @@ export const Container = styled(Animated.View)`
 `;
 
 export const Open = styled(Pressable)`
-  flex: 2;
   z-index: -100;
+  min-width: 60%;
   flex-basis: 270px;
 `;
 

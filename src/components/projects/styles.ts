@@ -7,7 +7,7 @@ import Colors from '@/constants/Colors';
 export const Root = styled(View)`
   justify-content: center;
   flex-direction: column;
-  padding: 0 48px;
+  padding: 0 28px;
 `;
 
 export const Title = styled(QuantumText).attrs(() => ({
@@ -23,6 +23,4 @@ export const Project = styled(View)`
   margin: 48px 0;
   overflow: hidden;
   flex-direction: row;
-  max-width: 1280px;
-  min-width: 540px;
 `;

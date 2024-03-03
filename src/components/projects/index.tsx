@@ -5,16 +5,17 @@ import ProjectDescription from './description';
 import AppRestPreview from './previews/appRest';
 import CataclimaPreview from './previews/cataclima';
 import { Project, Root, Title } from './styles';
-import { HEADER_HEIGHT } from '../customHeader/styles';
+
+import { Breakpoints } from '@/constants/Breakpoints';
 
 type ProjectsProps = Pick<React.ComponentProps<typeof Root>, 'onLayout'>;
 
 export default function Projects({ onLayout }: ProjectsProps) {
-  const { height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   return (
     <Root onLayout={onLayout}>
       <Title>Projetos</Title>
-      <Project style={{ maxHeight: height - HEADER_HEIGHT }}>
+      <Project style={{ flexDirection: width > Breakpoints.header ? 'row' : 'column' }}>
         <ProjectDescription
           name="Cataclima"
           description="Aplicativo Mobile desenvolvido em React-native com Expo, que utiliza a sua localização para fornecer a previsão do tempo na sua cidade. ☔"
@@ -25,7 +26,7 @@ export default function Projects({ onLayout }: ProjectsProps) {
         <CataclimaPreview linkPreview={process.env.EXPO_PUBLIC_CATACLIMA_PREVIEW} />
       </Project>
 
-      <Project style={{ maxHeight: height - HEADER_HEIGHT }}>
+      <Project style={{ flexDirection: width > Breakpoints.header ? 'row' : 'column' }}>
         <ProjectDescription
           name="App Rest"
           description={`Projeto de uma Aplicação React-Native com Expo para consumir a API do Projeto API_REST-Estudos. \n\nO projeto possui Login e Cadastro para acessar a lista de Cidades e Pessoas onde é possível realizar as operações de criação, leitura, atualização e exclusão (CRUD) nos itens das listas`}
